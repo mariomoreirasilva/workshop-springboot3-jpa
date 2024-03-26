@@ -3,8 +3,19 @@ package com.educandoweb.course.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+//anotation abaixo para mapear objeto com banco relacional e colocar no nome da tabela tb_user
+@Entity
+@Table(name="tb_user")
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
+	//indicar qual a chave primaria e no caso campo identity
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String email;
